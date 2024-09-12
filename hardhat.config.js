@@ -1,10 +1,11 @@
-require("@nomiclabs/hardhat-waffle")
-require("@nomiclabs/hardhat-etherscan")
-require("hardhat-deploy")
-require("solidity-coverage")
-require("hardhat-gas-reporter")
+require("@nomicfoundation/hardhat-toolbox")
+require("@nomicfoundation/hardhat-verify")
+// require("@nomiclabs/hardhat-etherscan");
 require("hardhat-contract-sizer")
+require("solidity-coverage")
 require("dotenv").config()
+require("hardhat-gas-reporter")
+require("hardhat-deploy")
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
@@ -42,6 +43,8 @@ module.exports = {
       chainId: 31337,
     },
     localhost: {
+      url: "http://127.0.0.1:8545/",
+      // accounts: Thanks hardhat!
       chainId: 31337,
     },
     sepolia: {
@@ -103,8 +106,12 @@ module.exports = {
         version: "0.8.7",
       },
       {
+        version: "0.8.20",
+      },
+      {
         version: "0.4.24",
       },
+      { version: "0.8.8" },
     ],
   },
   mocha: {
