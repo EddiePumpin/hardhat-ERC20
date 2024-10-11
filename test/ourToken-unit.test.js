@@ -47,7 +47,7 @@ const {
 
       describe("transfers", () => {
         it("Should be able to transfer tokens successfully to an address", async () => {
-          const tokensToSend = ethers.utils.parseEther("0.02")
+          const tokensToSend = ethers.parseEther("0.02")
           await methERC20.transfer(deployer, tokensToSend)
           expect(await methERC20.balanceOf(deployer)).to.equal(tokensToSend)
         })
@@ -64,7 +64,7 @@ const {
           playerToken = await ethers.getContractAt("MegaEth", deployer)
         })
         it("Should approve other address to spend token", async () => {
-          const tokensToSpend = ethers.utils.parseEther("0.01")
+          const tokensToSpend = ethers.parseEther("0.01")
           await methERC20.approve(accDeployer, tokensToSpend)
           await playerToken.transferFrom(accDeployer, deployer, tokensToSpend)
           expect(await playerToken.balanceOf(deployer)).to.equal(tokensToSpend)

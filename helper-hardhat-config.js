@@ -8,7 +8,7 @@ const networkConfig = {
     ethUsdPriceFeed: "0x694AA1769357215DE4FAC081bf1f309aDC325306",
   },
 }
-const INITIAL_SUPPLY = "50000000"
+const INITIAL_SUPPLY = ethers.parseEther("50000000");
 
 const developmentChains = ["hardhat", "localhost"]
 
