@@ -11,7 +11,7 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
   const { deploy, log } = deployments
   const { deployer } = await getNamedAccounts()
 
-  const methERC20 = await deploy("MegaERC20", {
+  const methERC20 = await deploy("MegaEth", {
     from: deployer,
     args: [INITIAL_SUPPLY],
     log: true,

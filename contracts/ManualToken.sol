@@ -32,7 +32,6 @@ contract MethERC20 {
     string memory tokenSymbol,
     uint256 initialSupply
   ) {
-    // Initial supply of 50,000,000 is ideal
     totalSupply = initialSupply * 10 ** uint256(TOKEN_DECIMALS); // It is ideal to update the total suppply with the decimal amount
     balanceOf[msg.sender] = totalSupply; // All tokens are given to the creator
     name = tokenName;
